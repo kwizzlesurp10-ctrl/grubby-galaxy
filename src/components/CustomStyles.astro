@@ -3,6 +3,7 @@ import '@fontsource-variable/inter';
 import '@fontsource/bungee';
 import '@fontsource/rubik-distressed';
 ---
+
 <style is:global>
   :root {
     --aw-font-sans: 'Inter Variable', sans-serif;
@@ -31,39 +32,50 @@ import '@fontsource/rubik-distressed';
   }
 
   /* Mild Chaos */
-  html[data-chaos-level="mild"] {
+  html[data-chaos-level='mild'] {
     --aw-font-heading: 'Inter Variable', sans-serif;
     cursor: auto !important;
   }
-  html[data-chaos-level="mild"] .glitch-text {
+  html[data-chaos-level='mild'] .glitch-text {
     animation: none;
     text-shadow: none;
   }
-  html[data-chaos-level="mild"] .animate-sparkle, html[data-chaos-level="mild"] .animate-glitch {
+  html[data-chaos-level='mild'] .animate-sparkle,
+  html[data-chaos-level='mild'] .animate-glitch {
     animation: none;
   }
-  html[data-chaos-level="mild"] body::before {
+  html[data-chaos-level='mild'] body::before {
     display: none;
   }
 
   /* Normal Chaos */
-  html[data-chaos-level="normal"] {
+  html[data-chaos-level='normal'] {
     --aw-font-heading: 'Bungee', Impact, sans-serif;
     cursor: auto !important;
   }
-  html[data-chaos-level="normal"] body::before {
+  html[data-chaos-level='normal'] body::before {
     display: none;
   }
 
   /* Overlord Chaos */
-  html[data-chaos-level="overlord"] {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="8" fill="%23ff10f0" opacity="0.7"/></svg>'), auto;
+  html[data-chaos-level='overlord'] {
+    cursor:
+      url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="8" fill="%23ff10f0" opacity="0.7"/></svg>'),
+      auto;
   }
-  html[data-chaos-level="overlord"] body::before {
+  html[data-chaos-level='overlord'] body::before {
     content: '';
     position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: repeating-linear-gradient(transparent 0px, transparent 2px, rgba(255,16,240,0.03) 2px, rgba(255,16,240,0.03) 4px);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+      transparent 0px,
+      transparent 2px,
+      rgba(255, 16, 240, 0.03) 2px,
+      rgba(255, 16, 240, 0.03) 4px
+    );
     pointer-events: none;
     z-index: 9999;
   }
@@ -86,7 +98,9 @@ import '@fontsource/rubik-distressed';
     padding: 1.5rem;
     box-shadow: 0 0 10px rgba(255, 16, 240, 0.3);
     will-change: transform;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
   }
 
   @media (hover: hover) and (min-width: 1024px) {
@@ -105,13 +119,17 @@ import '@fontsource/rubik-distressed';
 
   .glitch-text {
     animation: glitch 2s infinite;
-    text-shadow: 2px 0 #ff10f0, -2px 0 #26f4de;
+    text-shadow:
+      2px 0 #ff10f0,
+      -2px 0 #26f4de;
     will-change: transform;
   }
 
   /* Accessibility Defaults */
   @media (prefers-reduced-motion: reduce) {
-    *, ::before, ::after {
+    *,
+    ::before,
+    ::after {
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
